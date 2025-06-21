@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1MBHealthy - Redefining Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #1e3a8a, #6b7280);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, #4f46e5, #10b981, #ec4899);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(30, 58, 138, 0.7);
+            transition: transform 0.3s ease;
+        }
+        .sticky-nav.scrolled {
+            transform: translateY(0);
+        }
+        .glow-card {
+            background: #2d3748; /* Unified background color for all cards */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .glow-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px #10b981;
+        }
+        .pulse-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #4f46e5;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            animation: pulse 2s infinite;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .pulse-btn:hover {
+            background: #10b981;
+            color: #ffffff;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(to right, #4f46e5, #10b981);
+            border-radius: 2px;
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+        .logo-img:hover {
+            transform: rotate(360deg);
+        }
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 10s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            50% { transform: translateY(-100px) translateX(20px); opacity: 0.3; }
+            100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+        }
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid #10b981;
+        }
+        .nav-links a.active {
+            color: #10b981;
+            font-weight: bold;
+            border-bottom: 2px solid #10b981;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="sticky-nav py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div>
+                <a>
+                    <img src="https://res.cloudinary.com/dgf9vvjpg/image/upload/v1750074290/logo_p0ltra.png" alt="1MBHealthy Logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="flex space-x-6 text-white nav-links">
+                <li><a href="#vision" class="hover:text-indigo-300 transition">Vision</a></li>
+<li><a href="#abdm-nha" class="hover:text-indigo-300 transition">ABDM & NHA</a></li>
+		<li><a href="#features" class="hover:text-indigo-300 transition">Features</a></li>
+                <li><a href="#contact" class="hover:text-indigo-300 transition">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white py-24 relative">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 typewriter" style="font-family: 'Orbitron', sans-serif;">Introducing 1MBHealthy</h1>
+            <p class="text-2xl mb-8 animate__fadeIn animate__delay-1s">The Future of Hyper-Personalized Healthcare</p>
+            <p class="max-w-2xl mx-auto mb-10 animate__fadeIn animate__delay-2s">1MBHealthy is a next-generation AI-powered health app designed to deliver hyper-personalized healthcare with real-time data, predictive analytics, and AI-driven insights.</p>
+
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-indigo-900 to-transparent"></div>
+        <div id="particles" class="absolute inset-0"></div>
+    </section>
+
+    <!-- Why 1MBHealthy -->
+    <section id="why" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Why 1MBHealthy?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">AI-Driven Personalization</h3>
+                    <p>Tailored health insights based on real-time vitals, lifestyle patterns, and genetic predisposition.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Preventive & Predictive Healthcare</h3>
+                    <p>Early detection of potential health risks using advanced ML models.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Integrated Health Ecosystem</h3>
+                    <p>Seamless integration with wearables, diagnostic labs, pharmacies, and insurance providers.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Hyper-Personalized Wellness Plans</h3>
+                    <p>Custom diet, fitness, and mental health recommendations for every individual.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Clinical-Grade Insights</h3>
+                    <p>Evidence-based AI models that assist users and healthcare professionals.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Secure & Compliant</h3>
+                    <p>Built with HIPAA-compliant architecture to ensure data privacy and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section id="vision" class="py-20 parallax" style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1920&q=80');">
+        <div class="container mx-auto px-4 text-center bg-black bg-opacity-60 py-16 rounded-lg">
+            <h2 class="text-4xl font-bold mb-6 section-title">The Vision</h2>
+            <p class="max-w-3xl mx-auto">1MBHealthy is set to revolutionize digital healthcare by shifting the focus from reactive treatments to proactive well-being. With data-driven precision medicine and AI-powered diagnostics, we empower individuals to take control of their health.</p>
+        </div>
+    </section>
+
+    <!-- ABDM & NHA Integration -->
+<section id="abdm-nha" class="py-20 bg-gradient-to-r from-indigo-900 to-gray-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 section-title">ABDM & NHA Integration</h2>
+        <p class="max-w-3xl mx-auto mb-8 text-center">1MBHealthy is fully integrated with the Ayushman Bharat Digital Mission (ABDM) and National Health Authority (NHA) infrastructure, enabling seamless storage, management, and sharing of health records through the Ayushman Bharat Health Account (ABHA). This empowers patients to securely share their medical history with doctors, streamlining healthcare delivery.</p>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <li class="flex items-start bullet-animate">
+                <span class="text-emerald-400 font-bold mr-2">•</span>
+                Seamless ABHA Integration – Users can log into their ABHA account via 1MBHealthy to securely store and access digital health records, eliminating the need for physical documents.
+            </li>
+            <li class="flex items-start bullet-animate">
+                <span class="text-emerald-400 font-bold mr-2">•</span>
+                Interoperable Healthcare Ecosystem – Leverages ABDM’s framework to connect with hospitals, labs, pharmacies, and doctors for efficient data sharing and care coordination.
+            </li>
+            <li class="flex items-start bullet-animate">
+                <span class="text-emerald-400 font-bold mr-2">•</span>
+                Empowered Patients and Doctors – Patients can share previous health data with doctors instantly, enabling faster diagnoses and personalized treatment plans.
+            </li>
+            <li class="flex items-start bullet-animate">
+                <span class="text-emerald-400 font-bold mr-2">•</span>
+                Compliance and Security – Built on ABDM’s HIPAA-compliant architecture, ensuring data privacy and adherence to NHA’s regulatory standards.
+            </li>
+        </ul>
+    </div>
+</section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Major Features of 1MBHealthy</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Digital Health Locker</h3>
+                    <p>Secure, cloud-based platform to store, manage, and share health records with ABHA integration.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Personal Health Profile</h3>
+                    <p>Dynamic record of health data, lifestyle, genetics, and medical history for predictive tracking.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">Personal Health Calendar</h3>
+                    <p>Effortlessly schedule appointments, medication reminders, and health tasks.</p>
+                </div>
+                <div class="glow-card floating">
+                    <h3 class="text-xl font-semibold mb-4">1MBHealthy Copilot</h3>
+                    <p>AI-powered assistant for hyper-personalized recommendations and proactive insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta" class="py-20 gradient-hero text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 section-title">Join the Healthcare Revolution!</h2>
+            <p class="max-w-2xl mx-auto mb-8">We’re seeking strategic partners, investors, and collaborators to shape the future of hyper-personalized healthcare. Let’s drive this transformation together!</p>
+            <a href="#contact" class="pulse-btn">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="font-semibold">Address:</p>
+                    <p>ITPL Main Road, Hoodi Whitefield, Bangalore<br>Pin: 560048</p>
+                    <p class="font-semibold mt-4">Email:</p>
+                    <p><a href="mailto:contact@deepmindzai.com" class="text-indigo-300 hover:underline">contact@deepmindzai.com</a></p>
+                    <p class="font-semibold mt-4">Phone:</p>
+                    <p><a href="tel:+919739006696" class="text-indigo-300 hover:underline">+91 97390 06696</a></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#vision" class="text-indigo-300 hover:underline">Vision</a></li>
+                        <li><a href="#services" class="text-indigo-300 hover:underline">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-950 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 DEEPMINDZ AI PRIVATE LIMITED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+        // Navigation Animation
+        gsap.from(".nav-links li", {
+            opacity: 0,
+            x: 50,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        // Logo Spin on Scroll
+        gsap.to(".logo-img", {
+            scrollTrigger: {
+                trigger: ".sticky-nav",
+                start: "top top",
+                toggleActions: "play none none none"
+            },
+            rotation: 360,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        // Typewriter Effect for Hero Title
+        gsap.to(".typewriter", {
+            text: "Introducing 1MBHealthy",
+            duration: 2,
+            ease: "none",
+            onComplete: () => {
+                gsap.to(".typewriter", {
+                    borderColor: "transparent",
+                    duration: 0.5
+                });
+            }
+        });
+
+        // Hero Section Animations
+        gsap.from(".animate__fadeIn", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power3.out"
+        });
+
+        // Floating Effect for Cards
+        gsap.utils.toArray(".floating").forEach(card => {
+            gsap.to(card, {
+                y: -10,
+                duration: 2,
+                ease: "power1.inOut",
+                repeat: -1,
+                yoyo: true
+            });
+        });
+
+        // Card Animations
+        gsap.utils.toArray(".glow-card").forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Section Title Animations
+        gsap.utils.toArray(".section-title").forEach(title => {
+            gsap.from(title, {
+                scrollTrigger: {
+                    trigger: title,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                x: -50,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Bullet Point Animations
+        gsap.utils.toArray(".bullet-animate").forEach(bullet => {
+            gsap.from(bullet, {
+                scrollTrigger: {
+                    trigger: bullet,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 0,
+                x: -30,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // Particle Animation for Hero Section
+        const particleContainer = document.getElementById("particles");
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particleContainer.appendChild(particle);
+        }
+
+        // Parallax Effect Enhancement
+        gsap.utils.toArray(".parallax").forEach(section => {
+            gsap.to(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                },
+                backgroundPositionY: "20%",
+                ease: "none"
+            });
+        });
+
+        // Scroll-Based Navigation Hide/Show
+        let lastScroll = 0;
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            const nav = document.querySelector(".sticky-nav");
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = "translateY(-100%)";
+            } else {
+                nav.style.transform = "translateY(0)";
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update URL and highlight active nav link on scroll
+        gsap.utils.toArray(['#why', '#vision', '#why-invest', '#features', '#services', '#cta', '#contact']).forEach(section => {
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top 50%',
+                end: 'bottom 50%',
+                onEnter: () => {
+                    const sectionId = section.getAttribute('id');
+                    history.pushState(null, null, `#${sectionId}`);
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                        link.removeAttribute('aria-current');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                            link.setAttribute('aria-current', 'page');
+                        }
+                    });
+                },
+                onEnterBack: () => {
+                    const sectionId = section.getAttribute('id');
+                    history.pushState(null, null, `#${sectionId}`);
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                        link.removeAttribute('aria-current');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                            link.setAttribute('aria-current', 'page');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
